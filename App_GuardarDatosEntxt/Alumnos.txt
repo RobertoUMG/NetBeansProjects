@@ -1,0 +1,7 @@
+E5|Carlos Franco|30
+D4|Michelle Martinez|40
+C3|Alejandro Rodriguez|35
+B2|Rossio Guerra|25
+A1|Roberto Jose Padilla|25
+090|Julio de Leon|22
+08|sds|18
