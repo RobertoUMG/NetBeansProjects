@@ -23,7 +23,7 @@ public class main {
         String strContinuar = null;
         
         //Inicializando billetera
-        int intBilletera = 100;
+        int intBilletera = 10;
         
         //Inicializando control de acierto del numero y color
         boolean boolNum = false, boolColor = false;
@@ -44,14 +44,19 @@ public class main {
         System.out.println("Generaré un número del 1 al 10 y le asignaré un color; si el número es par será negro, si el número es impar será blanco.");
         System.out.println("Tienes que tratar de adivinar el número y color, si lo logras te daré recompensas");
         System.out.println("¡Suerte!");
-        
-        System.out.println(""); System.out.println(""); System.out.println("");
   
         
         do {
+            System.out.println(""); System.out.println(""); System.out.println("");
+            
                 System.out.println("En este momento tienes "+intBilletera+" monedas, se usarán "+intPrice+ " monedas para tu apuesta");
+                
+                if (intBilletera>=10) {               
+            
+                
                 //Descuenta precio de la apuesta
                 intBilletera -= intPrice;
+                System.out.println("Te quedan "+intBilletera+" monedas");
                 
                 //Genera un número aleatorio y le asigna un color
                 intNumRuleta = (int)(10.0 * Math.random());
@@ -69,9 +74,10 @@ public class main {
                     }
                 }
                 
+                //Guarda en bool si logró adivinar numero
                 boolNum = intNumRuleta == intNumAdiv;            
                 
-                
+                //Limpieza del buffer
                 TxtIn.nextLine();
                 
                 //Obtencion del color a prueba de errores
@@ -83,6 +89,7 @@ public class main {
                     }   
                 }
                 
+                //Guarda en bool si logró adivinar color
                 boolColor = strColorRuleta.equals(strColorAdiv);                   
                 
                 System.out.println(""); System.out.println("");
@@ -111,11 +118,18 @@ public class main {
                 System.out.println("Deseas continuar?");
                 strContinuar = TxtIn.nextLine();
                 
+                } else {
+                    System.out.println("No tienes suficiente monedas para continuar.");
+                    strContinuar ="N";
+                }
+                
                 //Reset de variables
                 intNumAdiv = 0;
                 strColorAdiv= null;
                 boolNum = false;
                 boolColor = false;
+                
+                
                 
             
         } while (strContinuar.equals("s") || strContinuar.equals("S") );
