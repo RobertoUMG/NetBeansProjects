@@ -109,6 +109,8 @@ public class main {
                     intBilletera += (intPrice*2);                 
                 }else System.out.println("No adivinaste el color :( ");
                 
+                
+                    System.out.println("");               
 
                 
                 System.out.println(strColorAdiv + intNumAdiv);
